@@ -37,7 +37,7 @@ spring:
           uri: https://github.com/wzz-code/cloud-config-sample
           search-paths: config-repo
 ```
-如上，将在https://github.com/wzz-code/cloud-config-sample的config-repo下查找配置文件，也可直接指定uri为https://github.com/wzz-code/cloud-config-sample/config-repo。
+如上，将在 https://github.com/wzz-code/cloud-config-sample 的config-repo下查找配置文件，也可直接指定uri为 https://github.com/wzz-code/cloud-config-sample/config-repo。
 `search-paths`也可以配置为 `search-path: config-repo, config-repo/dev*`
 
 
