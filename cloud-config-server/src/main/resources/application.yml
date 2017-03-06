@@ -5,6 +5,15 @@ spring:
         git:
           uri: https://github.com/wzz-code/cloud-config-sample
           search-paths: config-repo
+          repos:
+            client:
+              pattern: config-client/dev, test/dev*, test*/dev
+              uri: https://github.com/wzz-code/cloud-config-sample
+              search-paths: config-repo/config-client-multiple
+            #也可以本地配置
+            #local:
+            #  pattern: local*
+            #  uri: file:/xxx/xxx/repo-config 或 ///c:/xxx/xxx/repo-config 的git仓库
 
   application:
     name: config-server

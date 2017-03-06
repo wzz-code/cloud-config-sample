@@ -40,8 +40,27 @@ spring:
 如上，将在 https://github.com/wzz-code/cloud-config-sample 的config-repo下查找配置文件，也可直接指定uri为 https://github.com/wzz-code/cloud-config-sample/config-repo 。
 `search-paths`也可以配置为 `search-path: config-repo, config-repo/dev*`
 
+##v1.1.2 资源文件匹配和多个资源的配置
 
-
-
-
+应用程序名称和profile可以支持更复杂的需求，多种模式进行匹配。此配置格式为 ``{application}/{profile}``
+，当有多个值时，可以用逗号进行分隔，值也可以进行模糊匹配。示例如下：
+```yaml
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/wzz-code/cloud-config-sample
+          search-paths: config-repo
+          repos:
+            client:
+              pattern: config-client/dev, test/dev*, test*/dev
+              uri: https://github.com/wzz-code/cloud-config-sample
+              search-paths: config-repo/config-client-multiple
+            #也可以本地配置
+            #local: 
+            #  pattern: local*
+            #  uri: file:/xxx/xxx/repo-config 或 ///c:/xxx/xxx/repo-config 的git仓库
+```
+此示例中 config-client的dev环境会被``pattern: config-client/dev`` 匹配到，并读取指定的``uri/search-paths``中的``config-client-dev.properites配置文件``
 
