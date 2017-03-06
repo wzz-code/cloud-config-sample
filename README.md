@@ -18,9 +18,14 @@ __客户端__
 
 #版本
 
+##v1.0 创建示例项目
+
+- 创建cloud config sample主项目，并创建cloud-config-client及cloud-config-server子项目
+- cloud-config-server提供配置服务，cloud-config-client通过server从[config-repo](https://github.com/wzz-code/config-repo)获取配置
+
 ##v1.1 环境资源配置
 
-__search-paths__
+##v1.1.1 search-paths配置
 
 属性配置`search-paths`指定在uri资源下search-paths的子目录查找配置文件，示例如下
 ```yaml
@@ -36,10 +41,7 @@ spring:
 `search-paths`也可以配置为 `search-path: config-repo, config-repo/dev*`
 
 
-##v1.0 创建示例项目
 
-- 创建cloud config sample主项目，并创建cloud-config-client及cloud-config-server子项目
-- cloud-config-server提供配置服务，cloud-config-client通过server从[config-repo](https://github.com/wzz-code/config-repo)获取配置
 
 
 
