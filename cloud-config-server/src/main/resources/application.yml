@@ -9,6 +9,7 @@ spring:
             client:
               pattern: config-client/dev, test/dev*, test*/dev
               uri: https://github.com/wzz-code/cloud-config-sample
+              clone-on-start: true
               search-paths: config-repo/config-client-multiple
             #也可以本地配置
             #local:

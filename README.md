@@ -62,5 +62,26 @@ spring:
             #  pattern: local*
             #  uri: file:/xxx/xxx/repo-config 或 file:/F:/xxx/xxx/repo-config 的git仓库
 ```
-此示例中 config-client的dev环境会被``pattern: config-client/dev`` 匹配到，并读取指定的``uri/search-paths``中的``config-client-dev.properites配置文件``
+此示例中 config-client的dev环境会被 ``pattern: config-client/dev`` 匹配到，并读取指定的``uri/search-paths``中的``config-client-dev.properites配置文件``
 
+## v1.1.3 clone-on-start 配置
+
+配置服务器默认是在第一次请求配置时，才进行远程加载配置。 可以通过 ``clone-on-start`` 配置为在启动配置服务时，立即去加载远程资源，示例如下：
+
+```yaml
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/wzz-code/cloud-config-sample
+          search-paths: config-repo
+          repos:
+            client:
+              pattern: config-client/dev, test/dev*, test*/dev
+              uri: https://github.com/wzz-code/cloud-config-sample
+              clone-on-start: true
+              search-paths: config-repo/config-client-multiple
+```
+
+资源配置规则``client`` 设置了 ``clone-on-start: true``，则在配置服务启动时，会去加载 ``uri/search-paths`` 中的资源
