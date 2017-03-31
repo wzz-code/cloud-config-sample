@@ -84,4 +84,4 @@ spring:
               search-paths: config-repo/config-client-multiple
 ```
 
-资源配置规则``client`` 设置了 ``clone-on-start: true``，则在配置服务启动时，会去加载 ``uri/search-paths`` 中的资源
+资源配置规则 ``client`` 设置了 ``clone-on-start: true``，则在配置服务启动时，会去加载 ``uri/search-paths`` 中的资源
