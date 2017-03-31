@@ -62,7 +62,7 @@ spring:
             #  pattern: local*
             #  uri: file:/xxx/xxx/repo-config 或 file:/F:/xxx/xxx/repo-config 的git仓库
 ```
-此示例中 config-client的dev环境会被 ``pattern: config-client/dev`` 匹配到，并读取指定的``uri/search-paths``中的``config-client-dev.properites配置文件``
+此示例中 config-client的dev环境会被 ``pattern: config-client/dev`` 匹配到，并读取指定的 ``uri/search-paths`` 中的``config-client-dev.properites配置文件``
 
 ## v1.1.3 clone-on-start 配置
 
